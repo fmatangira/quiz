@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var interval;
-  var seconds = 10;
+  var seconds = 101;
   var minutesFormat;
 
 //FUNCTION TO FORMAT MINUTES IN TIMER
@@ -9,7 +9,7 @@ function formatMinutes() {
   var formattedMinutes;
   minutesFormat = Math.floor(seconds / 60);
 
-  if (seconds < 10) {
+  if (minutesFormat < 10) {
     formattedMinutes = "0" + minutesFormat;
   } else {
     formattedMinutes = minutesFormat;
@@ -23,7 +23,7 @@ function formatSeconds () {
   var secondsFormat = seconds % 60;
   var formattedSeconds;
 
-  if (seconds < 10) {
+  if (secondsFormat < 10) {
     formattedSeconds = "0" + secondsFormat;
   } else {
     formattedSeconds = secondsFormat;

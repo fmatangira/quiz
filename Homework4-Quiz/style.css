@@ -11,3 +11,11 @@
 .quizRow {
   text-align: center;
 }
+
+.landingPage {
+  padding: 250px 0 0 0;
+}
+
+#quizDesc {
+  font-size: 20px;
+}
