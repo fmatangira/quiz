@@ -1,0 +1,12 @@
+.viewScores {
+  padding: 20px 0 0 100px;
+}
+
+#timer {
+  float: right;
+  padding: 20px 100px 0 0;
+}
+
+.quizRow {
+  text-align: center;
+}
