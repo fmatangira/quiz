@@ -5,6 +5,7 @@
 #timer {
   float: right;
   padding: 20px 100px 0 0;
+  font-weight: 700;
 }
 
 .quizRow {
