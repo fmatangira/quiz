@@ -6,9 +6,10 @@
   float: right;
   padding: 20px 100px 0 0;
   font-weight: 700;
+  /* color: orange; */
 }
 
-.quizRow {
+.landingRow {
   text-align: center;
 }
 
@@ -18,4 +19,45 @@
 
 #quizDesc {
   font-size: 20px;
+}
+
+#questionTitle {
+  margin-left: 40px;
+  padding-bottom: 20px;
+}
+
+.quizRow {
+  /* background-color: yellow; */
+  position: absolute;
+  bottom: 320px;
+  margin-right: 200px;
+}
+
+ul {
+  line-height: 2;
+  font-size: 23px;
+  list-style-type: none;
+}
+
+#option1,#option2,#option3,#option4 {
+  background-color: #007bff;
+  border: solid black;
+  padding-left: 20px;
+  color: white;
+  margin: 0 700px 0 0;
+}
+
+#option1:hover,#option2:hover,#option3:hover,#option4:hover {
+  background-color: #99caff;
+  color: black;
+  cursor: pointer;
+}
+
+#option2 {
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+#option3 {
+  border-bottom-width: 0;
 }

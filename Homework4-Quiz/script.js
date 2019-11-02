@@ -1,50 +1,95 @@
+var interval;
+var seconds = 65;
+var minutesFormat;
+
+var questions = [{
+    title: "Commonly used data types DO NOT include:",
+    choices: ["strings", "booleans", "alerts", "numbers"],
+    answer: "alerts"
+  },
+  {
+    title: "The condition in an if / else statement is enclosed within ____.",
+    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+    answer: "parentheses"
+  },
+  ///etc.
+];
+
 $(document).ready(function() {
-  var interval;
-  var seconds = 101;
-  var minutesFormat;
 
-//FUNCTION TO FORMAT MINUTES IN TIMER
-function formatMinutes() {
 
-  var formattedMinutes;
-  minutesFormat = Math.floor(seconds / 60);
+  //FUNCTION TO FORMAT MINUTES IN TIMER
+  function formatMinutes() {
 
-  if (minutesFormat < 10) {
-    formattedMinutes = "0" + minutesFormat;
-  } else {
-    formattedMinutes = minutesFormat;
+    var formattedMinutes;
+    minutesFormat = Math.floor(seconds / 60);
+
+    if (minutesFormat < 10) {
+      formattedMinutes = "0" + minutesFormat;
+    } else {
+      formattedMinutes = minutesFormat;
+    }
+    return formattedMinutes;
   }
-  return formattedMinutes;
-}
 
-// FUNCTION TO FORMAT SECONDS IN TIMER
-function formatSeconds () {
+  // FUNCTION TO FORMAT SECONDS IN TIMER
+  function formatSeconds() {
 
-  var secondsFormat = seconds % 60;
-  var formattedSeconds;
+    var secondsFormat = seconds % 60;
+    var formattedSeconds;
 
-  if (secondsFormat < 10) {
-    formattedSeconds = "0" + secondsFormat;
-  } else {
-    formattedSeconds = secondsFormat;
+    if (secondsFormat < 10) {
+      formattedSeconds = "0" + secondsFormat;
+    } else {
+      formattedSeconds = secondsFormat;
+    }
+    return formattedSeconds;
   }
-  return formattedSeconds;
-}
 
-//START TIMER WHEN CLICKING ON "START QUIZ" BUTTON
-function startTimer() {
-  $('#quizButton').on('click', function() {
-    interval = setInterval(function() {
-      seconds--;
-      $('#timer').html("TIMER: " + formatMinutes() + ":" + formatSeconds());
+  //START TIMER WHEN CLICKING ON "START QUIZ" BUTTON
+  function quizStart() {
+    $('#quizButton').on('click', function() {
+      $('.quizRow').show();
+      $('.landingRow').hide();
+      $('#questionTitle').text(questions[1].title);
 
-      if (seconds === 0) {
-        clearInterval(interval);
-        $('#timer').text('TIMES UP!!!');
-      }
-    },1000);
-  });
-}
+        interval = setInterval(function() {
+        seconds--;
+        $('#timer').html("TIMER: " + formatMinutes() + ":" + formatSeconds());
 
-startTimer();
+        if (seconds === 0) {
+          clearInterval(interval);
+          $('#timer').text('TIMES UP!!!');
+        }
+
+        //FORMAT COLOR OF TIMER DEPENDING ON TIME LEFT
+        $('#timer').css('color', 'green');
+
+        if (seconds < 60) {
+          $('#timer').css('color', '#e5d429');
+        }
+
+        if (seconds < 30) {
+          $('#timer').css('color', 'orange');
+        }
+
+        if (seconds < 10) {
+          $('#timer').css('color', 'red');
+        }
+      }, 1000);
+    });
+  }
+
+  // function quiz() {
+  //   $('quizButton').on('click', function() {
+  //
+  //   });
+  //
+  // }
+
+  $('.quizRow').hide();
+  // $('landingRow').hide();
+  quizStart();
+  // quiz();
+
 });
