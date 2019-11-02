@@ -27,7 +27,6 @@
 }
 
 .quizRow {
-  /* background-color: yellow; */
   position: absolute;
   bottom: 320px;
   margin-right: 200px;
@@ -39,25 +38,55 @@ ul {
   list-style-type: none;
 }
 
-#option1,#option2,#option3,#option4 {
+.option1,.option2,.option3,.option4 {
   background-color: #007bff;
   border: solid black;
   padding-left: 20px;
   color: white;
-  margin: 0 700px 0 0;
+  margin: 0 600px 0 0;
 }
 
-#option1:hover,#option2:hover,#option3:hover,#option4:hover {
+.option1:hover,.option2:hover,.option3:hover,.option4:hover {
   background-color: #99caff;
   color: black;
   cursor: pointer;
 }
 
-#option2 {
+.option2 {
   border-top-width: 0;
   border-bottom-width: 0;
 }
 
-#option3 {
+.option3 {
   border-bottom-width: 0;
+}
+
+.nameHsCont {
+  text-align: center;
+  padding: 250px 0 0 0;
+}
+
+#score {
+  padding: 0 0 30px 0;
+}
+
+#timeLeft {
+  padding: 0 0 20px 0;
+}
+
+#nameInstruct {
+  padding: 0 0 20px 0;
+}
+
+#nameHS {
+  width: 350px;
+  height: 50px;
+  margin: 0 20px;
+  font-size: 25px;
+  text-align: center;
+}
+
+#nameLabel {
+  font-weight: 600;
+  font-size: 30px;
 }
