@@ -129,6 +129,11 @@ $(document).ready(function() {
       if (seconds === 0) {
         clearInterval(interval);
         $('#timer').text('TIMES UP!!!');
+        alert('QUIZ OVER!');
+        $('.quizRow').hide();
+        timesUp();
+        $('.enterNameCont').show();
+        return;
       }
 
       //FORMAT COLOR OF TIMER DEPENDING ON TIME LEFT
@@ -151,6 +156,10 @@ $(document).ready(function() {
   function showScore() {
     $('#score').text('You received a score of: ' + Math.round(((score/6)*100)) + '%!');
     $('#timeLeft').text('You finished this quiz in ' + (65 - seconds) + ' seconds!');
+  }
+
+  function timesUp() {
+    $('#score').text('You ran out of time! You received a score of: ' + Math.round(((score/6)*100)) + '%!');
   }
 
   //RUN QUIZ
