@@ -110,6 +110,13 @@ $(document).ready(function() {
           $('.quizRow').hide();
           showScore();
           $('.enterNameCont').show();
+
+          $('#nameSubmit').on('click',function(event) {
+            event.preventDefault();
+            saveToLS();
+            alert('Score has been saved!');
+            location.reload();
+          });
         } else {
           alert('WRONG ANSWER');
           seconds = seconds-10;
@@ -117,6 +124,13 @@ $(document).ready(function() {
           $('.quizRow').hide();
           showScore();
           $('.enterNameCont').show();
+
+          $('#nameSubmit').on('click', function(event) {
+            event.preventDefault();
+            saveToLS();
+            alert('Score has been saved!');
+            location.reload();
+          });
         }
       }
   });
@@ -162,10 +176,26 @@ $(document).ready(function() {
     $('#score').text('You ran out of time! You received a score of: ' + Math.round(((score/6)*100)) + '%!');
   }
 
+
+  function saveToLS() {
+    var name = document.querySelector('#nameHS').value;
+    localStorage.setItem('user',JSON.stringify(highScores));
+  }
+
+  function showHighScores1() {
+    $('.viewScores').on('click', function() {
+      $('.highScoreModal').show();
+      $('#hsExport').text(JSON.parse(localStorage.getItem('user')));
+    });
+  }
+
+
+
   //RUN QUIZ
   $('.quizRow').hide();
-
+  showHighScores1();
   quizStart();
   quizQuestions();
+  var highScores = {Name: document.querySelector('#nameHS').value, Score: score};
   $('.enterNameCont').hide();
 });
