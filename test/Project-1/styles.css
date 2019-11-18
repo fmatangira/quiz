@@ -1,0 +1,74 @@
+body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url(./assets/images/AustinSkyline.png);
+
+  /* Add the blur effect */
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1.1);
+}
+
+/* Position text in the middle of the page/image */
+.munchi-intro {
+  background-color: #71db77; /* Fallback color */
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.munchi-input {
+  margin: 50px 0 0 0;
+}
+
+img {
+  width: 300px;
+  float: left;
+}
+
+label {
+  color: white;
+  font-size: 20px;
+  top: 20px;
+}
+
+input {
+  background-color: white !important;
+  border-radius: 20px !important;
+  text-align: center;
+  margin: 15px 0 0 0 !important;
+  font-size: 20px !important;
+}
+
+a {
+  font-size: 25px;
+  color: #18bc9d;
+}
+
+.login {
+  position: absolute;
+  z-index: 3;
+}
